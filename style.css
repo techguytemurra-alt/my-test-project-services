@@ -232,19 +232,25 @@ body {
 .main-nav ul {
   list-style: none;
 }
+/* ლინკების საწყისი მდგომარეობა */
 .main-nav ul li a {
   display: block;
   padding: 12px;
   color: var(--white);
   text-decoration: none;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05); /* ძალიან ნაზი ფონი */
   margin-bottom: 10px;
   border-radius: 12px;
-  transition: 0.3s;
-  text-align: center;
+  transition: all 0.3s ease; /* ეს არის ჯადოქრობა - ანიმაციის სისწრაფე */
+  border: 1px solid transparent;
 }
+
+/* მაუსის მიტანისას (Hover) */
 .main-nav ul li a:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--white);
+  color: var(--secondary-color); /* ტექსტი ლურჯდება */
+  transform: translateX(10px); /* ლინკი ოდნავ მარჯვნივ იწევა */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* =========================================
