@@ -32,37 +32,32 @@ body {
 .layout-wrapper {
   display: flex;
   align-items: flex-start;
-  height: 100vh; /* min-height-ის ნაცვლად height, რომ ეკრანს არ გასცდეს */
-  padding: 10px 20px 20px 20px; /* ზედა პედინგი 20-დან 10-მდე შევამცირეთ */
-  box-sizing: border-box;
+  min-height: 100vh;
+  padding: 20px;
   gap: 20px;
-  overflow: hidden; /* wrapper-ს ვუკრძალავთ სქროლს, სქროლი იქნება მხოლოდ კონტენტში */
+  background-color: var(--bg-color);
 }
 
+/* 2. მენიუ უნდა გაიჭედოს (Sticky) */
 .header-menu {
   width: 280px;
-  height: calc(100vh - 40px);
-  position: sticky;
-  top: 0;
+  height: calc(100vh - 40px); /* ეკრანის სრული სიმაღლე მინუს პედინგები */
+  position: sticky; /* აი ეს აჩერებს სქროლვისას! */
+  top: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* ეს დააშორებს მენიუს და ფუტერს */
-  background-color: transparent; /* ფონი წავშალეთ */
-  box-shadow: none; /* ჩრდილიც მოვაშორეთ */
-  padding: 0; /* პედინგიც 0, რომ შიდა ბლოკები კარგად დაჯდეს */
   flex-shrink: 0;
 }
 
 .sidebar-footer {
-  margin-top: auto; /* აი ეს ჩაწევს დაბლა! */
-  background-color: var(--primary-color);
-  padding: 20px;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  text-align: center;
-  font-size: 0.75rem;
+  margin-top: auto; /* ჩააგდებს მენიუს სულ ბოლოში */
+  background-color: #1e293b; /* მუქი ფერი უკეთესია ფუტერისთვის */
   color: var(--white);
-  flex-shrink: 0; /* რომ არ "დაიჭყლიტოს" */
+  padding: 15px;
+  border-radius: var(--radius);
+  text-align: center;
+  font-size: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .sidebar-footer p {
@@ -70,14 +65,13 @@ body {
   margin-bottom: 5px;
 }
 
+/* 3. კონტენტს მივცეთ უფლება, რომ ისქროლოს */
 .content-area {
   flex-grow: 1;
-  height: calc(100vh - 40px); /* ეკრანის სიმაღლეს გამოკლებული პედინგები */
-  overflow-y: auto; /* სქროლი გაჩნდება მხოლოდ აქ, როცა საჭიროა */
   display: flex;
   flex-direction: column;
   gap: 30px;
-  padding-right: 10px; /* სქროლსა და კონტენტს შორის ადგილი */
+  /* აქ აღარ გვინდა overflow: auto, რომ მთლიანი გვერდის სქროლი გამოვიყენოთ */
 }
 
 .content-area::-webkit-scrollbar {
@@ -207,10 +201,11 @@ body {
    ========================================= */
 
 .main-nav {
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color); /* ლურჯი უფრო სერიოზულია */
   padding: 30px 20px;
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  box-shadow: 15px 0 35px rgba(0, 0, 0, 0.1); /* ჩრდილი მარჯვნივ, რომ კონტენტს გამოეყოს */
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .menu-brand {
@@ -220,13 +215,11 @@ body {
   padding: 10px 0 20px 10px; /* ოდნავ მარცხნივ შეწიე, რომ მენიუს ხაზზე იჯდეს */
 }
 
+/* ბრენდის სახელი (Temo.Dev) გავხადოთ უფრო თვალსაჩინო */
 .text-1 {
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: var(
-    --secondary-color
-  ); /* გამოიყენე ლურჯი, რომ ყვითელ მენიუზე კონტრასტი ჰქონდეს */
-  font-size: 2.5rem;
+  color: var(--primary-color);
+  font-size: 2.8rem;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
 }
 
 .main-nav ul {
@@ -283,4 +276,30 @@ body {
   .hero-sidebar {
     grid-column: span 1;
   }
+}
+
+.gallery-container {
+  padding: 40px 5%;
+}
+
+.gallery-grid {
+  display: grid;
+  /* ეს ბრძანება ავტომატურად ალაგებს ფოტოებს ეკრანის ზომის მიხედვით */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.gallery-item {
+  width: 100%;
+  height: 350px;
+  object-fit: cover; /* ფოტო არ გაიწელება, ლამაზად ჩაჯდება ჩარჩოში */
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.gallery-item:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
