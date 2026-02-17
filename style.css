@@ -22,7 +22,7 @@ body {
   background-color: var(--bg-color);
   color: var(--text-dark);
   line-height: 1.6;
-  height: 100vh;
+
   overflow-x: hidden;
 }
 
@@ -83,15 +83,20 @@ body {
 }
 .content-area::-webkit-scrollbar-track {
   background: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+.content-area::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color); /* მაუსის მიტანისას გაფერადდეს */
 }
 
 /* =========================================
    3. HERO DASHBOARD (GRID)
    ========================================= */
 .hero-container {
-  background: transparent !important; /* მოვაშორე თეთრი ფონი სექციიდან */
-  padding: 0 !important;
-  margin: 0 !important;
+  background: transparent; /* მოვაშორე თეთრი ფონი სექციიდან */
+  padding: 0;
+  margin: 0;
 }
 
 .hero-grid-container {
@@ -157,6 +162,18 @@ body {
   align-self: start;
 }
 
+.about-container {
+  background: var(--white);
+  padding: 40px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow); /* დავამატოთ ჩრდილი, რომ სტილში ჩაჯდეს */
+}
+
+.about-container h2 {
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+}
+
 /* =========================================
    4. COMPONENTS (PROJECTS, BUTTONS)
    ========================================= */
@@ -166,7 +183,9 @@ body {
   border-radius: var(--radius);
 }
 
-.project-grid {
+.project-grid,
+.project-grid1 {
+  /* ორივე კლასს მისცემს ერთსადაიმავე სტილს */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
@@ -261,7 +280,10 @@ body {
 @media (max-width: 900px) {
   .layout-wrapper {
     flex-direction: column;
+    padding: 10px; /* ნაკლები სივრცე გვერდებზე */
+    gap: 10px;
   }
+
   .header-menu {
     width: 100%;
     height: auto;
@@ -278,28 +300,56 @@ body {
   }
 }
 
-.gallery-container {
-  padding: 40px 5%;
+.skills-section {
+  padding: 60px 0;
+  background-color: #f9f9f9; /* ოდნავ განსხვავებული ფონი, რომ გამოიყოს */
 }
 
-.gallery-grid {
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2rem;
+  color: var(--secondary-color);
+}
+
+.skills-grid {
   display: grid;
-  /* ეს ბრძანება ავტომატურად ალაგებს ფოტოებს ეკრანის ზომის მიხედვით */
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
+  padding: 0 20px;
 }
 
-.gallery-item {
-  width: 100%;
-  height: 350px;
-  object-fit: cover; /* ფოტო არ გაიწელება, ლამაზად ჩაჯდება ჩარჩოში */
-  border-radius: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.4s ease;
-  cursor: pointer;
+.skill-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  border: 1px solid #eee;
 }
 
-.gallery-item:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+.skill-card:hover {
+  transform: translateY(-10px); /* ოდნავ ზემოთ აიწევა მაუსის მიტანისას */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary-color);
+}
+
+.skill-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.skill-card h3 {
+  margin-bottom: 10px;
+  color: var(--secondary-color);
+  font-size: 1.2rem;
+}
+
+.skill-card p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.5;
 }

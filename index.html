@@ -20,7 +20,7 @@
           <ul>
             <li><a href="#hero">Home</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#skills">Skills</a></li>
             <li><a href="#about">About Me</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
@@ -65,6 +65,23 @@
           </div>
         </section>
 
+        <section
+          id="about"
+          class="about-container"
+          style="
+            background: white;
+            padding: 40px;
+            border-radius: var(--radius);
+            margin-bottom: 20px;
+          "
+        >
+          <h2>About Me</h2>
+          <p>
+            I am an IT support specialist with a strong technical background in
+            multi-platform environment management...
+          </p>
+        </section>
+
         <section id="projects" class="projects-container">
           <div class="section-header">
             <h2>ჩემი პროექტები</h2>
@@ -84,7 +101,7 @@
             </article>
           </div>
 
-          <div class="project-grid">
+          <div class="project-grid1">
             <article class="project-card">
               <h3>პროექტი 1</h3>
               <p>აღწერა...</p>
@@ -97,29 +114,36 @@
           </div>
         </section>
 
-        <section class="gallery-container">
-          <h2>ჩემი ნამუშევრები</h2>
-          <div class="gallery-grid">
-            <img
-              src="https://picsum.photos/400/600?random=1"
-              class="gallery-item"
-              alt="Work 1"
-            />
-            <img
-              src="https://picsum.photos/400/600?random=2"
-              class="gallery-item"
-              alt="Work 2"
-            />
-            <img
-              src="https://picsum.photos/400/600?random=3"
-              class="gallery-item"
-              alt="Work 3"
-            />
-            <img
-              src="https://picsum.photos/400/600?random=4"
-              class="gallery-item"
-              alt="Work 4"
-            />
+        <section id="skills" class="skills-section">
+          <div class="container">
+            <h2 class="section-title">Technical Toolkit</h2>
+            <div class="skills-grid">
+              <div class="skill-card">
+                <div class="skill-icon">🖥️</div>
+                <h3>OS Administration</h3>
+                <p>macOS (M-series), Windows 10/11, Linux (Fedora, Ubuntu)</p>
+              </div>
+
+              <div class="skill-card">
+                <div class="skill-icon">🌐</div>
+                <h3>Networking</h3>
+                <p>DHCP/Static IP, CLI Troubleshooting (nmcli, iproute2)</p>
+              </div>
+
+              <div class="skill-card">
+                <div class="skill-icon">💻</div>
+                <h3>Web Development</h3>
+                <p>HTML5, CSS3, JavaScript (Learning), WordPress</p>
+              </div>
+
+              <div class="skill-card">
+                <div class="skill-icon">🛡️</div>
+                <h3>Systems & Support</h3>
+                <p>
+                  Software Deployment, Infrastructure Stability, System Security
+                </p>
+              </div>
+            </div>
           </div>
         </section>
       </main>
