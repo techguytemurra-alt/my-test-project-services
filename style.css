@@ -227,13 +227,6 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.menu-brand {
-  margin-top: 51px;
-  margin-bottom: 20px;
-  text-align: center;
-  padding: 10px 0 20px 10px; /* ოდნავ მარცხნივ შეწიე, რომ მენიუს ხაზზე იჯდეს */
-}
-
 /* ბრენდის სახელი (Temo.Dev) გავხადოთ უფრო თვალსაჩინო */
 .text-1 {
   color: var(--primary-color);
@@ -352,4 +345,25 @@ body {
   font-size: 0.95rem;
   color: #666;
   line-height: 1.5;
+}
+
+/* ახალი კოდი გვერდიგვერდ განლაგებისთვის */
+.main-content-row {
+  display: flex;
+  gap: 20px; /* დაშორება ბლოკებს შორის */
+  align-items: stretch; /* ორივე ბლოკი იქნება ერთი სიმაღლის */
+}
+
+/* თითოეულმა ბლოკმა დაიკავოს თანაბარი ადგილი */
+.about-container,
+.projects-container {
+  flex: 1;
+  margin-bottom: 0 !important; /* მოვაშოროთ ქვედა დაშორება, რადგან ახლა გვერდიგვერდ არიან */
+}
+
+/* რესპონსივი: თუ ეკრანი პატარაა (მაგ. ტელეფონი), ისევ ერთმანეთის ქვეშ დალაგდნენ */
+@media (max-width: 1000px) {
+  .main-content-row {
+    flex-direction: column;
+  }
 }

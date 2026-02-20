@@ -1,0 +1,104 @@
+/* 3. კონტენტს მივცეთ უფლება, რომ ისქროლოს */
+.content-area {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  /* აქ აღარ გვინდა overflow: auto, რომ მთლიანი გვერდის სქროლი გამოვიყენოთ */
+}
+
+.content-area::-webkit-scrollbar {
+  width: 8px;
+}
+.content-area::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 10px;
+}
+.content-area::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+.content-area::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color); /* მაუსის მიტანისას გაფერადდეს */
+}
+
+.hero-container {
+  background: transparent; /* მოვაშორე თეთრი ფონი სექციიდან */
+  padding: 0;
+  margin: 0;
+}
+
+.hero-grid-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.2fr;
+  gap: 20px;
+  /* ნუ მისცემ ფიქსირებულ 500px-ს, სინჯე ეს: */
+  min-height: 400px;
+  height: auto;
+}
+
+.hero-main-box {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("your-image.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--radius);
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  color: var(--white);
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  color: var(--white);
+  text-transform: none;
+  margin-bottom: 10px;
+}
+
+.btn-main {
+  display: inline-block;
+  padding: 12px 35px;
+  background-color: var(--primary-color);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.hero-small-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.small-card {
+  flex: 1;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.card-photography {
+  background: #50e3c2;
+  color: var(--secondary-color);
+}
+.card-networking {
+  background: var(--secondary-color);
+}
+
+.hero-sidebar {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  height: fit-content;
+  align-self: start;
+}
