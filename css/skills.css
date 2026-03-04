@@ -1,53 +1,47 @@
 .skills-section {
-  padding: 60px 0;
-  background-color: #f9f9f9; /* ოდნავ განსხვავებული ფონი, რომ გამოიყოს */
+  padding: 80px 40px;
+  background: #f9f9f9;
+  border-radius: var(--radius);
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .section-title {
   text-align: center;
-  margin-bottom: 40px;
-  font-size: 2rem;
+  margin-bottom: 50px;
+  font-size: 2.2rem;
   color: var(--secondary-color);
 }
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 0 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .skill-card {
   background: white;
-  padding: 30px;
-  border-radius: 12px;
+  padding: 40px;
+  border-radius: 20px;
   text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+  transition: 0.3s;
   border: 1px solid #eee;
 }
 
 .skill-card:hover {
-  transform: translateY(-10px); /* ოდნავ ზემოთ აიწევა მაუსის მიტანისას */
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transform: translateY(-10px);
   border-color: var(--primary-color);
+  box-shadow: var(--shadow);
 }
 
 .skill-icon {
-  font-size: 3rem;
-  margin-bottom: 15px;
-}
-
-.skill-card h3 {
-  margin-bottom: 10px;
-  color: var(--secondary-color);
-  font-size: 1.2rem;
-}
-
-.skill-card p {
-  font-size: 0.95rem;
-  color: #666;
-  line-height: 1.5;
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  display: block;
 }

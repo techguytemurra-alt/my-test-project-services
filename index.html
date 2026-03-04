@@ -23,7 +23,6 @@
         <nav class="main-nav">
           <ul>
             <li><a href="#hero">Home</a></li>
-            <li><a href="#projects">Projects</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#about">About Me</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -39,77 +38,58 @@
           <div class="hero-grid-container">
             <div class="hero-main-box">
               <div class="hero-content">
-                <h1>The future starts here.</h1>
-                <p>IT Engineering | Photography</p>
-                <a href="#projects" class="btn-main">ჩემი ნამუშევრები</a>
+                <span class="badge">Professional Portfolio</span>
+                <h1>
+                  Building Digital <br />
+                  <span class="highlight">Infrastructure.</span>
+                </h1>
+                <p>
+                  IT Specialist & Photographer based in Batumi. Specializing in
+                  Linux systems, Network security, and Visual storytelling.
+                </p>
+                <div class="hero-btns">
+                  <a
+                    href="https://wa.me/9955XXXXXXXX"
+                    target="_blank"
+                    class="btn-main"
+                    >Hire Me Now</a
+                  >
+                  <a href="#projects" class="btn-outline">Contact Me</a>
+                </div>
               </div>
             </div>
-
             <div class="hero-small-column">
               <div class="small-card card-photography">
-                <span>Photography</span>
+                <div class="card-overlay">
+                  <span class="icon">📸</span>
+                  <h3>Creative Visuals</h3>
+                  <p>Storytelling through lens</p>
+                </div>
               </div>
+
               <div class="small-card card-networking">
-                <span>Networking</span>
+                <div class="card-overlay">
+                  <span class="icon">🛡️</span>
+                  <h3>IT Systems</h3>
+                  <p>Secure & Fast Infrastructure</p>
+                </div>
               </div>
             </div>
 
             <aside class="hero-sidebar">
-              <h3>Quick Info</h3>
-              <p>
-                აქ შეგიძლია ჩაწერო შენი სტატუსი. რაც მეტს დაწერ, ეს ბლოკი უფრო
-                გაიზრდება.
-              </p>
+              <h3>Live Status</h3>
               <ul class="sidebar-status">
-                <li>🟢 Available for Work</li>
-                <li>📍 Batumi, Georgia</li>
-                <li>💻 M3 Pro Setup</li>
+                <li><span class="dot green"></span> Available for Projects</li>
+                <li><span class="dot blue"></span> Currently in Batumi</li>
+                <li><span class="dot orange"></span> M3 Pro Powered</li>
               </ul>
+              <div class="sidebar-stats">
+                <div class="stat-item"><strong>3+</strong> Years Exp.</div>
+                <div class="stat-item"><strong>50+</strong> Projects</div>
+              </div>
             </aside>
           </div>
         </section>
-
-        <div class="main-content-row">
-          <section id="about" class="about-container">
-            <h2>About Me</h2>
-            <p>
-              I am an IT support specialist with a strong technical background
-              in multi-platform environment management...
-            </p>
-          </section>
-
-          <section id="projects" class="projects-container">
-            <div class="section-header">
-              <h2>ჩემი პროექტები</h2>
-            </div>
-            <div class="project-grid">
-              <article class="project-card">
-                <h3>პროექტი 1</h3>
-                <p>Linux სისტემების ოპტიმიზაცია</p>
-              </article>
-              <article class="project-card">
-                <h3>პროექტი 2</h3>
-                <p>ფოტო-პორტფოლიო 2024</p>
-              </article>
-              <article class="project-card">
-                <h3>პროექტი 3</h3>
-                <p>ქსელური ინფრასტრუქტურა</p>
-              </article>
-            </div>
-
-            <div class="project-grid1">
-              <article class="project-card">
-                <h3>პროექტი 1</h3>
-                <p>აღწერა...</p>
-              </article>
-
-              <article class="project-card">
-                <h3>პროექტი 2</h3>
-                <p>აღწერა...</p>
-              </article>
-            </div>
-          </section>
-        </div>
 
         <section id="skills" class="skills-section">
           <div class="container">
@@ -143,7 +123,61 @@
             </div>
           </div>
         </section>
+
+        <div class="main-content-row">
+          <section id="about" class="about-container">
+            <h2>About Me</h2>
+            <p>
+              I am an IT support specialist with a strong technical background
+              in multi-platform environment management...
+            </p>
+          </section>
+
+          <section id="contact-info" class="personal-card-container">
+            <div class="profile-image-box">
+              <img
+                src="your-photo.jpg"
+                alt="Temo IT Specialist"
+                class="profile-pic"
+              />
+            </div>
+
+            <div class="contact-details">
+              <h2>Let's Get in Touch</h2>
+              <p>
+                მზად ვარ ნებისმიერი ტექნიკური გამოწვევისთვის. მომწერეთ და ერთად
+                ვიპოვოთ გამოსავალი.
+              </p>
+
+              <ul class="contact-list">
+                <li><strong>📍 Location:</strong> Batumi, Georgia</li>
+                <li><strong>📧 Email:</strong> your-email@gmail.com</li>
+                <li><strong>📞 Phone/WA:</strong> +995 5XX XX XX XX</li>
+              </ul>
+
+              <div class="social-links">
+                <a href="#" class="social-btn">LinkedIn</a>
+                <a href="#" class="social-btn">GitHub</a>
+                <a href="https://wa.me/995XXXXXXXXX" class="social-btn wa"
+                  >WhatsApp</a
+                >
+              </div>
+            </div>
+          </section>
+        </div>
       </main>
     </div>
+    <a href="#hero" class="back-to-top">↑</a>
+    <script>
+      // რეფრეშისას გვერდი ავიდეს ზემოთ
+      window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+      };
+
+      // თუ URL-ში გაქვს #about, რეფრეშისას წაშალოს
+      if (window.location.hash) {
+        history.replaceState("", document.title, window.location.pathname);
+      }
+    </script>
   </body>
 </html>

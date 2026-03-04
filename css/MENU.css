@@ -1,17 +1,13 @@
 .layout-wrapper {
   display: flex;
-  align-items: flex-start;
-  min-height: 100vh;
   padding: 20px;
-  gap: 20px;
-  background-color: var(--bg-color);
+  gap: 25px;
 }
 
-/* 2. მენიუ უნდა გაიჭედოს (Sticky) */
 .header-menu {
   width: 280px;
-  height: calc(100vh - 40px); /* ეკრანის სრული სიმაღლე მინუს პედინგები */
-  position: sticky; /* აი ეს აჩერებს სქროლვისას! */
+  height: calc(100vh - 40px);
+  position: sticky;
   top: 20px;
   display: flex;
   flex-direction: column;
@@ -19,87 +15,48 @@
 }
 
 .menu-brand {
-  margin-top: 51px;
-  margin-bottom: 20px;
+  padding: 40px 0;
   text-align: center;
-  padding: 10px 0 20px 10px; /* ოდნავ მარცხნივ შეწიე, რომ მენიუს ხაზზე იჯდეს */
 }
-
-/* ბრენდის სახელი (Temo.Dev) გავხადოთ უფრო თვალსაჩინო */
 .text-1 {
   color: var(--primary-color);
   font-size: 2.8rem;
-  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
-}
-
-.sidebar-footer {
-  margin-top: auto; /* ეს აგდებს ფუთერს მენიუს ბოლოში */
-  background-color: #1e293b;
-  color: var(--white);
-  padding: 15px;
-  border-radius: var(--radius);
-  text-align: center;
+  font-weight: 700;
 }
 
 .main-nav {
-  background-color: var(--secondary-color); /* ლურჯი უფრო სერიოზულია */
+  background: var(--secondary-color);
   padding: 30px 20px;
   border-radius: var(--radius);
-  box-shadow: 15px 0 35px rgba(0, 0, 0, 0.1); /* ჩრდილი მარჯვნივ, რომ კონტენტს გამოეყოს */
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow);
 }
 
 .main-nav ul {
   list-style: none;
 }
-/* ლინკების საწყისი მდგომარეობა */
 .main-nav ul li a {
   display: block;
-  padding: 12px;
-  color: var(--white);
+  padding: 14px 18px;
+  color: white;
   text-decoration: none;
-  background: rgba(255, 255, 255, 0.05); /* ძალიან ნაზი ფონი */
-  margin-bottom: 10px;
-  border-radius: 12px;
-  transition: all 0.3s ease; /* ეს არის ჯადოქრობა - ანიმაციის სისწრაფე */
-  border: 1px solid transparent;
+  margin-bottom: 12px;
+  border-radius: 15px;
+  transition: 0.3s;
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .main-nav ul li a:hover {
   background: var(--white);
-  color: var(--secondary-color); /* ტექსტი ლურჯდება */
-  transform: translateX(10px); /* ლინკი ოდნავ მარჯვნივ იწევა */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  color: var(--secondary-color);
+  transform: translateX(8px);
 }
 
-@media (max-width: 1200px) {
-  .hero-grid-container {
-    grid-template-columns: 1fr 1fr;
-  }
-  .hero-sidebar {
-    grid-column: span 2;
-  }
-}
-
-@media (max-width: 900px) {
-  .layout-wrapper {
-    flex-direction: column;
-    padding: 10px; /* ნაკლები სივრცე გვერდებზე */
-    gap: 10px;
-  }
-
-  .header-menu {
-    width: 100%;
-    height: auto;
-    position: relative;
-    top: 0;
-    left: 0;
-    margin: 0;
-  }
-  .hero-grid-container {
-    grid-template-columns: 1fr;
-  }
-  .hero-sidebar {
-    grid-column: span 1;
-  }
+.sidebar-footer {
+  margin-top: auto;
+  background: #1e293b;
+  color: white;
+  padding: 20px;
+  border-radius: var(--radius);
+  text-align: center;
+  font-size: 0.8rem;
 }
