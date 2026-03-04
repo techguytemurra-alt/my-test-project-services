@@ -4,19 +4,32 @@
   flex-direction: column;
   gap: 40px;
   padding-bottom: 40px;
+  overflow-x: hidden; /* დაზღვევა, რომ მარჯვნივ არაფერი გავარდეს */
+  min-width: 0;
+}
+
+.main-content-row {
+  margin-top: 100px; /* ეს დაწევს About და Contact სექციებს ქვემოთ */
+  display: flex;
+  gap: 20px;
+  align-items: stretch;
 }
 
 #hero {
-  min-height: 90vh;
+  min-height: 85vh;
   display: flex;
-  align-items: center;
+  /* align-items: center; <-- ეს წაშალე ან დააკომენტარე */
+  align-items: flex-start; /* დაამატე ეს, რომ ზედა ხაზი გათანაბრდეს */
+  padding-top: 0; /* დარწმუნდი, რომ ზედმეტი დაშორება არ აქვს */
+  margin-bottom: 0;
 }
 
 .hero-grid-container {
   display: grid;
   grid-template-columns: 2fr 1.1fr 1fr;
-  gap: 20px;
+  gap: 25px;
   width: 100%;
+  align-items: stretch; /* რომ ყველა ბლოკი ერთი სიმაღლის იყოს */
 }
 
 .hero-main-box {
@@ -26,7 +39,8 @@
   background-size: cover;
   background-position: center;
   border-radius: var(--radius);
-  padding: 50px;
+  padding: 60px;
+  min-height: 500px;
   color: var(--white);
   display: flex;
   flex-direction: column;
@@ -69,10 +83,13 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  height: 100%; /* აიღებს მშობლის სრულ სიმაღლეს */
 }
 .small-card {
   flex: 1;
   border-radius: 20px;
+  min-height: 160px; /* მინიმალური ზომა, რომ ტექსტი არ დაიჭყლიტოს */
+  /* დანარჩენი სტილები იგივე რჩება */
   padding: 25px;
   text-align: center;
   display: flex;
@@ -82,13 +99,22 @@
   color: white;
   transition: 0.3s;
   cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
 }
 .card-photography {
-  background: #50e3c2;
+  background: linear-gradient(135deg, #50e3c2 0%, #17a2b8 100%);
   color: var(--secondary-color);
 }
 .card-networking {
   background: var(--secondary-color);
+  background: linear-gradient(135deg, var(--secondary-color) 0%, #1e40af 100%);
+}
+
+.card-consultation {
+  background: linear-gradient(135deg, #f2b50b 0%, #e67e22 100%);
+  color: white;
 }
 
 .hero-sidebar {
@@ -96,19 +122,41 @@
   border-radius: var(--radius);
   padding: 30px;
   box-shadow: var(--shadow);
-  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* კონტენტს გაშლის თავიდან ბოლომდე */
+  height: 100%; /* გაიჭიმება Hero-ს სიმაღლეზე */
+  /* აი ესენი დაამატე */
+  text-align: center;
+  align-items: center;
+}
+
+.hero-sidebar h3 {
+  width: 100%;
+  margin-bottom: 10px;
 }
 
 .sidebar-status {
   list-style: none;
   margin: 20px 0;
+  padding: 0;
+  width: 100%;
+
+  /* ესენი დაამატე */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 .sidebar-status li {
   margin-bottom: 15px;
   display: flex;
   align-items: center;
+  justify-content: flex-start; /* წერტილი დარჩეს ტექსტის მარცხნივ */
   font-weight: 500;
+  width: fit-content; /* რომ კონტეინერი ზედმეტად არ გაიწელოს */
 }
+
 .dot {
   height: 10px;
   width: 10px;
@@ -128,7 +176,8 @@
 
 .sidebar-stats {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around; /* თანაბარი დაშორება ციფრებს შორის */
+  width: 100%;
   border-top: 1px solid #eee;
   padding-top: 25px;
   margin-top: 10px;

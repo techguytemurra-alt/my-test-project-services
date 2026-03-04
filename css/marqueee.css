@@ -1,0 +1,40 @@
+.marquee {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  padding: 22px 0;
+
+  /* 1. აწევა (დატოვე ის ციფრი, რაც მოგეწონა, მაგ: -150px) */
+  margin-top: -150px;
+
+  /* 2. ქვედა სექციის (Skills) "დაწევა" */
+  /* ეს დააბალანსებს აწევას და სკილებს თავის ადგილზე დააბრუნებს */
+  margin-bottom: 160px;
+
+  border-radius: var(--radius);
+  box-sizing: border-box;
+}
+
+.marquee-content {
+  display: inline-block;
+  animation: marquee 20s linear infinite;
+}
+
+.marquee-content span {
+  /* 3. ტექსტის ზომის გაზრდაც თუ გინდა, აქ შეცვალე */
+  font-size: 1.5rem; /* 1.2rem-დან ავწიეთ 1.5-მდე */
+  font-weight: 800;
+  text-transform: uppercase;
+  padding-right: 60px; /* დაშორება ტექსტებს შორის */
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
