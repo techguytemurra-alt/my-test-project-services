@@ -146,3 +146,41 @@
   color: #777;
   text-transform: uppercase;
 }
+
+/* მობილური ვერსია Hero-სთვის */
+@media (max-width: 900px) {
+  .hero-grid-container {
+    grid-template-columns: 1fr; /* 3 სვეტის ნაცვლად ყველაფერი ერთმანეთის ქვეშ */
+    gap: 15px;
+  }
+
+  .hero-main-box {
+    padding: 30px;
+    text-align: center;
+    min-height: 400px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem; /* სათაურის დაპატარავება */
+  }
+
+  .hero-btns {
+    justify-content: center;
+  }
+
+  .hero-small-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* ორი პატარა კუბიკი გვერდიგვერდ */
+    gap: 15px;
+  }
+
+  .hero-sidebar {
+    order: 3; /* საიდბარი სულ ბოლოში ჩავიდეს */
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-small-column {
+    grid-template-columns: 1fr; /* ტელეფონზე კუბიკებიც ერთმანეთის ქვეშ */
+  }
+}

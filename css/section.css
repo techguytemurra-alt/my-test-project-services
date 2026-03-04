@@ -74,10 +74,19 @@
 
 @media (max-width: 1100px) {
   .main-content-row {
-    flex-direction: column;
+    flex-direction: column; /* About და Contact ერთმანეთის ქვეშ */
+    min-height: auto;
   }
+
   .personal-card-container {
-    flex-direction: column;
+    flex-direction: column; /* ფოტო და ტექსტი ცენტრში */
     text-align: center;
+    padding: 30px;
+  }
+
+  .profile-pic {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
   }
 }

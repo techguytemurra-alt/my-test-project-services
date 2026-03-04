@@ -60,3 +60,42 @@
   text-align: center;
   font-size: 0.8rem;
 }
+
+@media (max-width: 900px) {
+  .layout-wrapper {
+    flex-direction: column; /* მენიუ და კონტენტი ერთმანეთის ქვეშ */
+    padding: 10px;
+  }
+
+  .header-menu {
+    width: 100%;
+    height: auto;
+    position: relative; /* აღარ იყოს Sticky გვერდზე */
+    top: 0;
+  }
+
+  .menu-brand {
+    padding: 15px 0;
+  }
+
+  .text-1 {
+    font-size: 2rem;
+  }
+
+  .main-nav ul {
+    display: flex; /* ლინკები გვერდიგვერდ */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .main-nav ul li a {
+    margin-bottom: 0;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
+
+  .sidebar-footer {
+    display: none; /* მობილურზე მენიუს ფუთერი მოვაშოროთ სივრცისთვის */
+  }
+}

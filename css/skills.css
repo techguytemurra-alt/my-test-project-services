@@ -45,3 +45,17 @@
   margin-bottom: 20px;
   display: block;
 }
+
+@media (max-width: 600px) {
+  .skills-section {
+    padding: 40px 20px;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .skill-card {
+    padding: 25px;
+  }
+}
